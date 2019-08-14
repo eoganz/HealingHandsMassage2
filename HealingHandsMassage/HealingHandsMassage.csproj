@@ -13,4 +13,11 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <None Include="Scripts\quill-1.3.6\.github\CONTRIBUTING.md" />
+    <None Include="Scripts\quill-1.3.6\.github\DEVELOPMENT.md" />
+    <None Include="Scripts\quill-1.3.6\.github\ISSUE_TEMPLATE.md" />
+  </ItemGroup>
+
 </Project>

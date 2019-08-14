@@ -42,8 +42,9 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: #61cced;
 }
 .footer {
   position: absolute;
@@ -53,4 +54,13 @@ body {
   /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
+}
+.rightEditableBox {
+    float: right;
+    border: 2.5px solid black;
+    padding: 10px;
+    margin-left: 40px;
+    margin-top: 30px;
+    background-color: white;
+    width: 30%;
 }
