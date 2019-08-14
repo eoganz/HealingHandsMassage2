@@ -1,8 +1,52 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<div class="mainHeader" align="center">
+    <!--<img src="~/Content/FamilyPic.jpeg" class="home-Pic" /> Going to change pic and move to left of intro -->
+    <div class="headerText">
+        <h1><b>Healing Hands Massage</b></h1>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        <h3><b>A massage with a touch of healing for body, mind and soul</b></h3>
+    </div>
+</div>
+
+<div class="mainIntro">
+    <div class="main-para">
+        <p>
+            I am an occupational therapist that specilizes in all sorts of massages. These include sports injury, deep tissue, pre/post natal, craniosacral, relaxation, symphatic drainage, and detox. Most massages come with stretching of the muscles as well.
+
+        </p>
+    </div>
+
+
+    <div class="rightEditableBox">
+        <form>
+            <b>Stretches</b>
+            <p class="editText" id="editText">
+                
+
+            </p>
+
+            <!--
+                Server side command for when admin is set up
+                if user == admin
+
+                Need to decide how I want to do this -->
+
+            <input type="button" value="Edit" onclick="OpenEditor()" />
+            <input type="button" formmethod="post" value="Finish" onclick="FinishUp()" />
+
+        </form>
+    </div>
+
+
+
+    <script>
+
+        function OpenEditor()
+        {
+
+        }
+
+    </script>
 </div>
