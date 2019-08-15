@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+
 <div class="mainHeader" align="center">
     <!--<img src="~/Content/FamilyPic.jpeg" class="home-Pic" /> Going to change pic and move to left of intro -->
     <div class="headerText">
@@ -20,41 +21,39 @@
 
 
     <div class="rightEditableBox">
-        <form>
-            <b>Stretches</b>
-            <p class="editText" id="editText">
-                I will fill this with info about stretches and photos. QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF
+        <b>Stretches</b>
+        <p class="editText" id="editText">
+            I will fill this with info about stretches and photos. QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF
+            QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF
+            QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF
+            QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF
+        </p>
 
-            </p>
-
-            <!--
-                Server side command for when admin is set up
-                if user == admin
-
-                Need to decide how I want to do this -->
-
-            <input type="button" value="Edit" onclick="OpenEditor()" />
-            <input type="button" formmethod="post" value="Finish" onclick="FinishUp()" />
-
-        </form>
+    <input type="button" value="Edit" onclick="OpenEditor()" />
+    <input type="button" formmethod="post" value="Finish" onclick="FinishUp()" />
     </div>
-
-
 
     <script>
 
-        var editor = new Quill('.rightEditableBox');
-        
 
-        function OpenEditor()
-        {
-            quill.enable();
+        function OpenEditor() {
+            editor.enable();
         }
 
-        function FinishUp()
-        {
-            quill.disable();
+        function FinishUp() {
+            editor.disable();
         }
+
+        var config = {
+            readOnly: true,
+            theme: 'snow',
+            modules: {
+                toolbar: false
+            }
+        };
+        //var container = document.getElementById('rightEditableBox');
+        var editor = new Quill('.rightEditableBox', config);
+
 
     </script>
 </div>
