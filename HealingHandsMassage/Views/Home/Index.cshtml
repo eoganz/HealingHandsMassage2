@@ -23,7 +23,7 @@
         <form>
             <b>Stretches</b>
             <p class="editText" id="editText">
-                
+                I will fill this with info about stretches and photos. QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF
 
             </p>
 
@@ -43,9 +43,17 @@
 
     <script>
 
+        var editor = new Quill('.rightEditableBox');
+        
+
         function OpenEditor()
         {
+            quill.enable();
+        }
 
+        function FinishUp()
+        {
+            quill.disable();
         }
 
     </script>

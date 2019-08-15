@@ -15,9 +15,7 @@
 
 
   <ItemGroup>
-    <None Include="Scripts\quill-1.3.6\.github\CONTRIBUTING.md" />
-    <None Include="Scripts\quill-1.3.6\.github\DEVELOPMENT.md" />
-    <None Include="Scripts\quill-1.3.6\.github\ISSUE_TEMPLATE.md" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
 
 </Project>
