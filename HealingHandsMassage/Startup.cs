@@ -38,12 +38,15 @@ namespace HealingHandsMassage
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddDefaultIdentity<IdentityUser>(IdentityHelper.SetIdentityConfigOptions)
+                .AddRoles<IdentityRole>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
+
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -72,6 +75,13 @@ namespace HealingHandsMassage
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+
+            //Create Custom roles
+            var serviceProvider = app.ApplicationServices.GetRequiredService<IServiceProvider>().CreateScope();
+            IdentityHelper.CreateRoles(serviceProvider.ServiceProvider, IdentityHelper.Admin, IdentityHelper.Customer)
+                .Wait();
+
         }
     }
 }
