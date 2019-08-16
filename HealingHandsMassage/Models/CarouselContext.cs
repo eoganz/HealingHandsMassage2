@@ -35,9 +35,10 @@ namespace HealingHandsMassage.Models
         public CarouselItem(string Json)
         {
             this.TextInJson = Json;
-            this.ImagePath = "None";
+            //Populates with null if not instantiated
+            this.ImagePath = "";
         }
-
+        
         public CarouselItem(string Json, string ImagePath)
         {
             this.TextInJson = Json;
