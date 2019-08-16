@@ -25,6 +25,8 @@ namespace HealingHandsMassage.Models
         [Key]
         public int id { get; set; }
 
+        public string ImagePath { get; set; }
+
         [Required]
         public string TextInJson { get; set; }
     }
