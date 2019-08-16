@@ -17,7 +17,8 @@ namespace HealingHandsMassage.Controllers
             CarouselItem carouselItem = new CarouselItem("Hello this is Jake");
 
             //Was causing NullException because it wasn't instantiated yet.
-            carouselContext.CarouselItems.Add(carouselItem);
+            //Now creates InvalidOperationException. Need to figure migrations first
+            //carouselContext.CarouselItems.Add(carouselItem);
             
 
             return View();
