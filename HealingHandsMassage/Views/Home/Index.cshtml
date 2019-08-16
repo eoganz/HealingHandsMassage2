@@ -19,7 +19,6 @@
         </p>
     </div>
 
-
     <div class="rightEditableBox">
         <b>Stretches</b>
         <p class="editText" id="editText">
@@ -29,15 +28,16 @@
             QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF
         </p>
 
-    <input type="button" value="Edit" onclick="OpenEditor()" />
-    <input type="button" formmethod="post" value="Finish" onclick="FinishUp()" />
+    <button type="button"onclick="OpenEditor()">Edit</button>
+    <button type="button" onclick="FinishUp()">Finish</button>
+
     </div>
 
     <script>
-
-
+        
         function OpenEditor() {
             editor.enable();
+            editor.focus();
         }
 
         function FinishUp() {
@@ -45,15 +45,12 @@
         }
 
         var config = {
-            readOnly: true,
-            theme: 'snow',
-            modules: {
-                toolbar: false
-            }
+            readOnly: true
         };
-        //var container = document.getElementById('rightEditableBox');
-        var editor = new Quill('.rightEditableBox', config);
-
+        
+        var editor = new Quill('.editText', config);
+        var delta = editor.getContents();
+        var json = JSON.stringify(delta);
 
     </script>
 </div>
