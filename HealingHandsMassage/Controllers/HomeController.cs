@@ -10,8 +10,15 @@ namespace HealingHandsMassage.Controllers
 {
     public class HomeController : Controller
     {
+        CarouselContext carouselContext = new CarouselContext();
+
         public IActionResult Index()
         {
+            CarouselItem carouselItem = new CarouselItem("Hello this is Jake");
+
+            carouselContext.CarouselItems.Add(carouselItem);
+            
+
             return View();
         }
 

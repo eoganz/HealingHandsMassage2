@@ -9,25 +9,11 @@ namespace HealingHandsMassage.Models
 {
     public static class CarouselHelper
     {
-
-        public static DbSet<CarouselItem> JsonText { get; set; }
-
-        
-        
-        public static bool LoadNextItem()
-        {
-            throw new NotImplementedException();
-        }
+        //public async Task GetAllItems(CarouselContext context)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 
-    public class CarouselItem
-    {
-        [Key]
-        public int id { get; set; }
 
-        public string ImagePath { get; set; }
-
-        [Required]
-        public string TextInJson { get; set; }
-    }
 }
