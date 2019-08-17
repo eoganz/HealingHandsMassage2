@@ -61,10 +61,11 @@ body {
     float: right;
     border: 2.5px solid black;
     padding: 10px;
-    margin-left: 40px;
-    margin-top: 30px;
+    padding-left: 25px;
+    margin-top: 5px;
+    margin-left: 10px;
     background-color: white;
-    width: 30%;
+    flex-shrink: 1.9;
 }
 
 .navbar {

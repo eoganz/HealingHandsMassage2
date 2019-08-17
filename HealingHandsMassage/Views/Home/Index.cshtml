@@ -28,30 +28,38 @@
             QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF
         </p>
 
-        <div class="EditButtons">
-    <button type="button"onclick="OpenEditor()">Edit</button>
-    <button type="button" onclick="FinishUp()">Finish</button>
+        <!--Need to figure out how to check if user is admin or cust -->
+        <!-- 
+            @if { ViewContext.HttpContext.User.IsInRole("Admin")
+                      {
+
+                    } };
+
+                -->
+        
+
+                <div class="EditButtons" id="EditButtons" runat="server">
+            <button type="button"onclick="OpenEditor()">Edit</button>
+            <button type="button" onclick="FinishUp()">Finish</button>
         </div>
     </div>
 
     <script>
         
         function OpenEditor() {
-            editor.enable();
-            editor.focus();
-        }
+                editor.enable();
+                editor.focus();
+            }
 
-        function FinishUp() {
-            editor.disable();
-        }
+            function FinishUp() {
+                editor.disable();
+            }
 
-        var config = {
-            readOnly: true
-        };
-        
-        var editor = new Quill('.editText', config);
-        var delta = editor.getContents();
-        var json = JSON.stringify(delta);
+            var config = if;
+
+            var editor = new Quill('.editText', config);
+            var delta = editor.getContents();
+            var json = JSON.stringify(delta);
 
     </script>
 </div>
