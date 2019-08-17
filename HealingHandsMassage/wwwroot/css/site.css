@@ -49,7 +49,8 @@ body {
 .footer {
   position: absolute;
   bottom: 0;
-  width: 100%;
+  margin-left: 2.5%;
+  width: 95%;
   white-space: nowrap;
   /* Set the fixed height of the footer here */
   height: 60px;
@@ -69,6 +70,22 @@ body {
 .navbar {
 }
 
+.mainIntro
+{
+    display:flex;
+}
+
 body {
     background-color: #38b1d6;
+}
+
+/*Hides random textbox created by Quill*/
+.ql-clipboard
+{
+    display: none;
+}
+
+.EditButtons
+{
+    display: none;
 }
