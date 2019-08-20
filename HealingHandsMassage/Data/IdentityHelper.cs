@@ -29,8 +29,8 @@ namespace HealingHandsMassage.Data
                 }
             }
             
-                IdentityUser user = await userManager.FindByEmailAsync("jakeemettler@gmail.com");
-                await userManager.AddToRoleAsync(user, "Admin");
+            IdentityUser user = await userManager.FindByEmailAsync("jakeemettler@gmail.com");
+            await userManager.AddToRoleAsync(user, "Admin");
 
         }
 
