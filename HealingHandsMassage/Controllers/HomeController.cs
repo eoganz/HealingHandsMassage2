@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HealingHandsMassage.Models;
 using HealingHandsMassage.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HealingHandsMassage.Controllers
 {
@@ -21,6 +22,13 @@ namespace HealingHandsMassage.Controllers
             //Now creates InvalidOperationException. Need to figure migrations first
             //carouselContext.CarouselItems.Add(carouselItem);
             
+
+            return View();
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult AllUsers()
+        {
 
             return View();
         }

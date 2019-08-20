@@ -39,12 +39,13 @@
 
                 --%>
             -->
-        
-
+        @if (User.IsInRole("Admin"))
+        {
                 <div class="EditButtons" id="EditButtons" runat="server">
             <button type="button"onclick="OpenEditor()">Edit</button>
-            <button type="button" onclick="FinishUp()">Finish</button>
+            <button type="button" onclick="FinishUp()">Finish</button>   
         </div>
+        }
     </div>
 
     <script>
@@ -59,9 +60,8 @@
             }
 
         var config = {
-            readonly: true
+            readOnly: true
         };
-
             var editor = new Quill('.editText', config);
             var delta = editor.getContents();
             var json = JSON.stringify(delta);

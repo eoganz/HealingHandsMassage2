@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HealingHandsMassage.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,10 +11,10 @@ namespace HealingHandsMassage.Models
     public static class CarouselHelper
     {
         //First need to figure out migrations
-        public async Task GetAllItems(CarouselContext context)
-        {
-            throw new NotImplementedException();
-        }
+        //public async Task<List<>> GetAllItems(ApplicationDbContext context)
+        //{
+        //    context.carouselItems.ToList()
+        //}
     }
 
 
