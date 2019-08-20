@@ -15,6 +15,7 @@ namespace HealingHandsMassage.Data
         internal static async Task CreateRoles(IServiceProvider provider, params string[] roles)
         {
             RoleManager<IdentityRole> roleManager = provider.GetRequiredService<RoleManager<IdentityRole>>();
+            UserManager<IdentityUser> userManager = provider.GetRequiredService<UserManager<IdentityUser>>();
 
             IdentityResult roleResult;
 
@@ -27,6 +28,9 @@ namespace HealingHandsMassage.Data
                     roleResult = await roleManager.CreateAsync(new IdentityRole(role));
                 }
             }
+            
+                IdentityUser user = await userManager.FindByEmailAsync("jakeemettler@gmail.com");
+                await userManager.AddToRoleAsync(user, "Admin");
 
         }
 

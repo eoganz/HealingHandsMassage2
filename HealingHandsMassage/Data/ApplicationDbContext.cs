@@ -14,6 +14,6 @@ namespace HealingHandsMassage.Data
         {
         }
 
-        public DbSet<CarouselItem> carouselItems { get; set; }
+        public DbSet<CarouselItem> CarouselItems { get; set; }
     }
 }

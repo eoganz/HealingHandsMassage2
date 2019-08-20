@@ -17,6 +17,11 @@
             I am an occupational therapist that specilizes in all sorts of massages. These include sports injury, deep tissue, pre/post natal, craniosacral, relaxation, symphatic drainage, and detox. Most massages come with stretching of the muscles as well.
 
         </p>
+
+        @if (User.IsInRole("Admin"))
+        {
+            <button>Hello Admin</button>
+        }
     </div>
 
     <div class="rightEditableBox">
