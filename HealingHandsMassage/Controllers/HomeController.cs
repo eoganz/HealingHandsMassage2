@@ -12,7 +12,6 @@ namespace HealingHandsMassage.Controllers
 {
     public class HomeController : Controller
     {
-        ApplicationDbContext context = new ApplicationDbContext();
 
         public IActionResult Index()
         {
@@ -20,7 +19,8 @@ namespace HealingHandsMassage.Controllers
 
             //Was causing NullException because it wasn't instantiated yet.
             //Now creates InvalidOperationException. Need to figure migrations first
-            CarouselHelper.AddItem(carouselItem, context);
+            
+            
 
             return View();
         }
