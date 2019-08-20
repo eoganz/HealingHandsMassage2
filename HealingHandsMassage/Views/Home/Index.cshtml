@@ -58,7 +58,9 @@
                 editor.disable();
             }
 
-            var config = if;
+        var config = {
+            readonly: true
+        };
 
             var editor = new Quill('.editText', config);
             var delta = editor.getContents();

@@ -10,10 +10,10 @@ namespace HealingHandsMassage.Models
     public static class CarouselHelper
     {
         //First need to figure out migrations
-        //public async Task GetAllItems(CarouselContext context)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public async Task GetAllItems(CarouselContext context)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 

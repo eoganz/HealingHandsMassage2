@@ -16,9 +16,7 @@ namespace HealingHandsMassage.Models
         {
 
         }
-
-        public virtual DbSet<CarouselItem> CarouselItems { get; set; }
-
+        
 
     }
 
@@ -31,6 +29,11 @@ namespace HealingHandsMassage.Models
 
         [Required]
         public string TextInJson { get; set; }
+
+        public CarouselItem()
+        {
+           
+        }
 
         public CarouselItem(string Json)
         {
