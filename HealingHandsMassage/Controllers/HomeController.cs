@@ -12,9 +12,9 @@ namespace HealingHandsMassage.Controllers
 {
     public class HomeController : Controller
     {
-
         public IActionResult Index()
         {
+
             CarouselItem carouselItem = new CarouselItem("Hello this is Jake");
 
             //Was causing NullException because it wasn't instantiated yet.
