@@ -21,18 +21,8 @@ namespace HealingHandsMassage.Controllers
 
         public IActionResult Index()
         {
-            //ViewData["firstItem"] = _context.CarouselItems.FirstOrDefault().TextInJson;
 
             return View();
-        }
-        
-        [HttpPost]
-        public async Task<string> CreateCarouselItem(string itemText)
-        {
-            var newItem = new CarouselItem(itemText);
-            await CarouselHelper.AddAndSaveAsync(newItem, _context);
-
-            return itemText;
         }
 
         [Authorize(Roles = "Admin")]

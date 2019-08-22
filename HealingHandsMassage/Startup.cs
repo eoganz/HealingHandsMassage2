@@ -13,11 +13,13 @@ using Microsoft.EntityFrameworkCore;
 using HealingHandsMassage.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace HealingHandsMassage
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -81,6 +83,7 @@ namespace HealingHandsMassage
             var serviceProvider = app.ApplicationServices.GetRequiredService<IServiceProvider>().CreateScope();
             IdentityHelper.CreateRoles(serviceProvider.ServiceProvider, IdentityHelper.Admin, IdentityHelper.Customer)
                 .Wait();
+            
 
         }
     }
