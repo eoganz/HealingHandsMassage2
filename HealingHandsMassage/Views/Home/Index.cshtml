@@ -12,6 +12,9 @@
 </div>
 
 <div class="mainIntro">
+
+    <img class="homePicture" src="~/Images/FamilyPhoto.jpeg" />
+
     <div class="main-para">
         <p>
             I am an occupational therapist that specilizes in all sorts of massages. These include sports injury, deep tissue, pre/post natal, craniosacral, relaxation, symphatic drainage, and detox. Most massages come with stretching of the muscles as well.
@@ -35,30 +38,29 @@
 
         @if (User.IsInRole("Admin"))
         {
-                <div class="EditButtons" id="EditButtons" runat="server">
-            <button type="button"onclick="OpenEditor()">Edit</button>
-            <button type="button" onclick="FinishUp()">Finish</button>   
-        </div>
+                <button type="button" onclick="OpenEditor()">Edit</button>
+                <button type="button" onclick="FinishUp()">Finish</button>
         }
     </div>
 
     <script>
-        
-        function OpenEditor() {
-                editor.enable();
-                editor.focus();
-            }
 
-            function FinishUp() {
-                editor.disable();
-            }
+        function OpenEditor() {
+            editor.enable();
+            editor.focus();
+        }
+
+        function FinishUp() {
+            editor.disable();
+        }
 
         var config = {
             readOnly: true
         };
-            var editor = new Quill('.editText', config);
-            var delta = editor.getContents();
-            var json = JSON.stringify(delta);
+
+        var editor = new Quill('.editText', config);
+        var delta = editor.getContents();
+        var json = JSON.stringify(delta);
 
     </script>
 </div>

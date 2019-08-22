@@ -49,8 +49,7 @@ body {
 .footer {
   position: absolute;
   bottom: 0;
-  margin-left: 2.5%;
-  width: 95%;
+  width: 100%;
   white-space: nowrap;
   /* Set the fixed height of the footer here */
   height: 60px;
@@ -61,11 +60,11 @@ body {
     float: right;
     border: 2.5px solid black;
     padding: 10px;
-    padding-left: 25px;
     margin-top: 5px;
-    margin-left: 10px;
+    margin-left: 15px;
+    margin-right:0;
     background-color: white;
-    flex-shrink: 1.9;
+    flex-shrink: 1.4;
 }
 
 .navbar {
@@ -89,4 +88,30 @@ body {
 .EditButtons
 {
     display: none;
+}
+
+img
+{
+    align-self:flex-start;
+    margin-right: 15px;
+}
+
+.headerText
+{
+    padding-bottom: 10px;
+}
+
+#faqAnswer
+{
+    display:none;
+}
+
+.faqPic
+{
+    margin-left: 30px;
+}
+
+.faqSection
+{
+    display: flex;
 }
