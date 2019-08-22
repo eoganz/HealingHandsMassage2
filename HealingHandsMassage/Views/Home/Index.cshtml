@@ -12,7 +12,6 @@
 </div>
 
 <div class="mainIntro">
-    <img src="~/im"/>
     <div class="main-para">
         <p>
             I am an occupational therapist that specilizes in all sorts of massages. These include sports injury, deep tissue, pre/post natal, craniosacral, relaxation, symphatic drainage, and detox. Most massages come with stretching of the muscles as well.
@@ -34,9 +33,20 @@
             QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF
         </p>
 
+        <!--Need to figure out how to check if user is admin or cust -->
+        
+        <!--
+            <%-- 
+            if ViewContext.HttpContext.User.IsInRole("Admin")
+                      {
+
+                    };
+
+                --%>
+            -->
         @if (User.IsInRole("Admin"))
         {
-        <div class="EditButtons" id="EditButtons" runat="server">
+                <div class="EditButtons" id="EditButtons" runat="server">
             <button type="button"onclick="OpenEditor()">Edit</button>
             <button type="button" onclick="FinishUp()">Finish</button>   
         </div>

@@ -18,15 +18,4 @@
     <Folder Include="Scripts\" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <None Include="wwwroot\Images\EssentialOils.jpeg" />
-    <None Include="wwwroot\Images\FamilyPhoto.jpeg" />
-    <None Include="wwwroot\Images\MassageBed.jpeg" />
-    <None Include="wwwroot\Images\MassageBedEmpty.jpeg" />
-    <None Include="wwwroot\Images\Quote1.jpeg" />
-    <None Include="wwwroot\Images\Quote2.jpeg" />
-    <None Include="wwwroot\Images\Quote3.jpeg" />
-  </ItemGroup>
-
 </Project>
