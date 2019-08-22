@@ -21,7 +21,7 @@ namespace HealingHandsMassage.Controllers
 
         public IActionResult Index()
         {
-            ViewData["firstItem"] = _context.CarouselItems.FirstOrDefault().TextInJson;
+            //ViewData["firstItem"] = _context.CarouselItems.FirstOrDefault().TextInJson;
 
             return View();
         }

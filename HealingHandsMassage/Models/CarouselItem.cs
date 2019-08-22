@@ -11,23 +11,12 @@ namespace HealingHandsMassage.Models
         [Key]
         public int id { get; set; }
 
-        public string ImagePath { get; set; }
-
         [Required]
-        public string TextInJson { get; set; }
+        public string Text { get; set; }
 
-
-        public CarouselItem(string Json)
+        public CarouselItem(string text)
         {
-            this.TextInJson = Json;
-            //Populates with null if not instantiated
-            this.ImagePath = "";
-        }
-
-        public CarouselItem(string Json, string ImagePath)
-        {
-            this.TextInJson = Json;
-            this.ImagePath = ImagePath;
+            this.Text = text;
         }
     }
 }
