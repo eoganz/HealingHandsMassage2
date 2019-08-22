@@ -16,10 +16,6 @@ namespace HealingHandsMassage.Models
         [Required]
         public string TextInJson { get; set; }
 
-        public CarouselItem()
-        {
-
-        }
 
         public CarouselItem(string Json)
         {

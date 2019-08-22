@@ -30,10 +30,7 @@
     <div class="rightEditableBox">
         <b>Stretches</b>
         <p class="editText" id="editText">
-            I will fill this with info about stretches and photos. QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF
-            QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF
-            QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF
-            QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF QWERTYASDF
+            @ViewData["firstItem"]
         </p>
 
         @if (User.IsInRole("Admin"))
@@ -43,24 +40,5 @@
         }
     </div>
 
-    <script>
-
-        function OpenEditor() {
-            editor.enable();
-            editor.focus();
-        }
-
-        function FinishUp() {
-            editor.disable();
-        }
-
-        var config = {
-            readOnly: true
-        };
-
-        var editor = new Quill('.editText', config);
-        var delta = editor.getContents();
-        var json = JSON.stringify(delta);
-
-    </script>
+    <script src="~/js/QuillBox.js"></script>
 </div>

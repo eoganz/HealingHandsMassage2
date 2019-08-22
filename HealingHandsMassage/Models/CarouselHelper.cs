@@ -32,6 +32,11 @@ namespace HealingHandsMassage.Models
             await context.CarouselItems.AddAsync(item);
             await context.SaveChangesAsync();
         }
+        public static void AddAndSave(CarouselItem item, ApplicationDbContext context)
+        {
+            context.CarouselItems.Add(item);
+            context.SaveChanges();
+        }
     }
 
 

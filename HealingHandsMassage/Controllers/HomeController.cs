@@ -19,17 +19,18 @@ namespace HealingHandsMassage.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-
-            CarouselItem carouselItem = new CarouselItem("Hello this is Jake");
-            await CarouselHelper.AddAndSaveAsync(carouselItem, _context);
-            //Was causing NullException because it wasn't instantiated yet.
-            //Now creates InvalidOperationException. Need to figure migrations first
-
-
+            ViewData["firstItem"] = _context.CarouselItems.FirstOrDefault().TextInJson;
 
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateCarouselItem(CarouselItem item)
+        {
+            CarouselHelper.AddAndSave(item, _context);
+            return null;
         }
 
         [Authorize(Roles = "Admin")]
