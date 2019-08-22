@@ -34,7 +34,7 @@ namespace HealingHandsMassage.Controllers
             }
 
             var carouselItem = await _context.CarouselItems
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.id == id);
             if (carouselItem == null)
             {
                 return NotFound();
@@ -88,7 +88,7 @@ namespace HealingHandsMassage.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,ImagePath,TextInJson")] CarouselItem carouselItem)
         {
-            if (id != carouselItem.Id)
+            if (id != carouselItem.id)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace HealingHandsMassage.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CarouselItemExists(carouselItem.Id))
+                    if (!CarouselItemExists(carouselItem.id))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace HealingHandsMassage.Controllers
             }
 
             var carouselItem = await _context.CarouselItems
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.id == id);
             if (carouselItem == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace HealingHandsMassage.Controllers
 
         private bool CarouselItemExists(int id)
         {
-            return _context.CarouselItems.Any(e => e.Id == id);
+            return _context.CarouselItems.Any(e => e.id == id);
         }
     }
 }

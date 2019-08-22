@@ -9,7 +9,7 @@ namespace HealingHandsMassage.Models
     public class CarouselItem
     {
         [Key]
-        public int Id { get; set; }
+        public int id { get; set; }
 
         public string ImagePath { get; set; }
 
