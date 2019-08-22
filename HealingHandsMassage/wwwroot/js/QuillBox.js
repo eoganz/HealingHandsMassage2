@@ -8,7 +8,17 @@ function FinishUp() {
     editor.disable();
     var boxText = editor.getText();
 
-    document.getElementById(editText).innerHTML = boxText;
+    $.ajax({
+        type: "POST",
+        url: '/Home/CreateCarouselItem',
+        dataType: "text",
+        data: { boxText },
+        traditional: true,
+        success: function (data) {
+            console.log(data);
+        },
+        error: console.log("it did not work"),
+    });
 
 }
 

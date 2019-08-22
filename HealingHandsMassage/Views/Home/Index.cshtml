@@ -36,7 +36,7 @@
         @if (User.IsInRole("Admin"))
         {
                 <button type="button" onclick="OpenEditor()">Edit</button>
-                <button type="button" onclick="FinishUp()">Finish</button>
+                <button type="button" onclick="FinishUp()" runat="server">Finish</button>
         }
     </div>
 

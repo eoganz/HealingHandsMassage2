@@ -25,12 +25,14 @@ namespace HealingHandsMassage.Controllers
 
             return View();
         }
-
+        
         [HttpPost]
-        public ActionResult CreateCarouselItem(CarouselItem item)
+        public async Task<string> CreateCarouselItem(string itemText)
         {
-            CarouselHelper.AddAndSave(item, _context);
-            return null;
+            var newItem = new CarouselItem(itemText);
+            await CarouselHelper.AddAndSaveAsync(newItem, _context);
+
+            return itemText;
         }
 
         [Authorize(Roles = "Admin")]
