@@ -12,15 +12,22 @@ namespace HealingHandsMassage.Controllers
 {
     public class HomeController : Controller
     {
-        public async Task<IActionResult> Index(ApplicationDbContext context)
+        private readonly ApplicationDbContext _context;
+
+        public HomeController(ApplicationDbContext context)
         {
-            
+            _context = context;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+
             CarouselItem carouselItem = new CarouselItem("Hello this is Jake");
-            await CarouselHelper.AddAndSaveAsync(carouselItem, context);
+            await CarouselHelper.AddAndSaveAsync(carouselItem, _context);
             //Was causing NullException because it wasn't instantiated yet.
             //Now creates InvalidOperationException. Need to figure migrations first
-            
-            
+
+
 
             return View();
         }
