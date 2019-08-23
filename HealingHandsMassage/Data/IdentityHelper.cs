@@ -28,9 +28,27 @@ namespace HealingHandsMassage.Data
                     roleResult = await roleManager.CreateAsync(new IdentityRole(role));
                 }
             }
+
+            var _user = await userManager.FindByEmailAsync("canahansadia@yahoo.com");
+
+            var powerUser = new IdentityUser()
+            {
+                UserName = "canahansadia@yahoo.com",
+                Email = "canahansadia@yahoo.com"
+            };
+
+            string UserPassword = "P@ssword1";
+
+
+            if(_user == null)
+            {
+                var createPowerUser = await userManager.CreateAsync(powerUser, UserPassword);
+                if(createPowerUser.Succeeded)
+                {
+                    await userManager.AddToRoleAsync(powerUser, "Admin");
+                }
+            }
             
-                IdentityUser user = await userManager.FindByEmailAsync("jakeemettler@gmail.com");
-                await userManager.AddToRoleAsync(user, "Admin");
 
         }
 

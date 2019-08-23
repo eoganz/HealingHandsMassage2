@@ -68,6 +68,7 @@ body {
 }
 
 .navbar {
+    background-color: #c36b0d
 }
 
 .mainIntro
@@ -200,4 +201,22 @@ img
 .mySlides
 {
     display: none;
+}
+
+.contactImage
+{
+    display: flex;
+    flex-direction: column;
+    float: right;
+}
+
+.contactInfo {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.contactPic
+{
+    margin-bottom: 10px;
 }
