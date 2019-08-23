@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HealingHandsMassage.Models;
+using HealingHandsMassage.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HealingHandsMassage.Controllers
 {
@@ -12,6 +14,14 @@ namespace HealingHandsMassage.Controllers
     {
         public IActionResult Index()
         {
+
+            return View();
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult AllUsers()
+        {
+
             return View();
         }
 

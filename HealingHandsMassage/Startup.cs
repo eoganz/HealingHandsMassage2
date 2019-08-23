@@ -13,11 +13,13 @@ using Microsoft.EntityFrameworkCore;
 using HealingHandsMassage.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace HealingHandsMassage
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -28,6 +30,8 @@ namespace HealingHandsMassage
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+            services.AddSingleton<IConfiguration>(Configuration);
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -81,6 +85,7 @@ namespace HealingHandsMassage
             var serviceProvider = app.ApplicationServices.GetRequiredService<IServiceProvider>().CreateScope();
             IdentityHelper.CreateRoles(serviceProvider.ServiceProvider, IdentityHelper.Admin, IdentityHelper.Customer)
                 .Wait();
+            
 
         }
     }
