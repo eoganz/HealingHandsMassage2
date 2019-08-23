@@ -14,17 +14,9 @@ namespace HealingHandsMassage.Controllers
     {
         public IActionResult Index()
         {
-
             return View();
         }
-
-        [Authorize(Roles = "Admin")]
-        public IActionResult AllUsers()
-        {
-
-            return View();
-        }
-
+        
         public IActionResult About()
         {
             return View();
